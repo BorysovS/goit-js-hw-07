@@ -7,8 +7,10 @@ galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
 
 galleryContainer.addEventListener('click', onClickImg)
 
-let galleryImg = new SimpleLightbox('.gallery')
-show.simplelightbox
+let galleryImg = new SimpleLightbox('.gallery a', {
+    captionsData: "alt",
+    captionDelay: 250
+});
 
 function onCreateMarkupGallery(galleryItems) { 
     return galleryItems.map(({ preview, original, description }) => {
@@ -20,6 +22,4 @@ function onCreateMarkupGallery(galleryItems) {
 
 function onClickImg(evt) { 
     evt.preventDefault();
-    const currenImg = evt.target
-    console.log(currenImg)
 }
